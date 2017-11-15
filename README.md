@@ -1,4 +1,4 @@
 # dbutil
 
 ## Usage
-$ dbutil -config path/to/config.yml
+`$ dbutil -config path/to/config.yml`
