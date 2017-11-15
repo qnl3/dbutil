@@ -1,12 +1,13 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"os"
 	"os/signal"
-	"syscall"
 	"runtime"
+	"syscall"
 
 	"github.com/go-yaml/yaml"
 )
@@ -33,10 +34,10 @@ func (config *ConfigMember) Log() {
 
 func main() {
 	defer os.Exit(0)
-
 	var yamlType []ConfigMember
-
-	source, err := ioutil.ReadFile("/Users/quinn/.go/src/github.com/quinn/dbutil/config.yml")
+	configPath := flag.String("config", "config.yml", "path to config file")
+	flag.Parse()
+	source, err := ioutil.ReadFile(*configPath)
 
 	if err != nil {
 		panic(err)
