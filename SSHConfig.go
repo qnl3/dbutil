@@ -57,7 +57,7 @@ func (config *SSHConfig) MakeConfig() *ssh.ClientConfig {
 	key, err := ioutil.ReadFile(config.KeyFile)
 
 	if err != nil {
-	    log.Fatalf("unable to read private key: %v", err)
+		log.Fatalf("unable to read private key: %v", err)
 	}
 
 	signer, err := ssh.ParsePrivateKey(key)

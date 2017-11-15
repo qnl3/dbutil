@@ -46,7 +46,7 @@ func main() {
 	err = yaml.UnmarshalStrict(source, &yamlType)
 
 	if err != nil {
-	    panic(err)
+		panic(err)
 	}
 
 	c := make(chan int)
